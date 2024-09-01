@@ -15,3 +15,13 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+#contacts-list {
+  position: relative;
+}
+
+#modal {
+  position: absolute;
+  top: 40px;
+  z-index: 1000;
+}

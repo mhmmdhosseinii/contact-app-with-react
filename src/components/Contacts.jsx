@@ -4,7 +4,10 @@ import { v4 } from "uuid";
 import inputs from "../constants/inputs";
 import ContactsList from "./ContactsList";
 
+import styles from "./Contacts.module.css";
+
 function Contacts() {
+  //states
   const [searchTerm, setSearchTerm] = useState("");
   const [editingContact, setEditingContact] = useState(null);
   const [alert, setAlert] = useState("");
@@ -16,6 +19,8 @@ function Contacts() {
     email: "",
     phone: "",
   });
+
+  //handlers
   const changeHandler = (event) => {
     const name = event.target.name;
     const value = event.target.value;
@@ -43,6 +48,7 @@ function Contacts() {
     }
     setFormData({ name: "", email: "", phone: "" });
   };
+
   const deleteHandler = (id) => {
     const newContacts = contacts.filter((contact) => contact.id !== id);
     setContacts(newContacts);
@@ -77,9 +83,10 @@ function Contacts() {
   );
 
   return (
-    <div>
-      <div>
+    <div className={styles.container}>
+      <div className={styles.form}>
         <input
+          className={styles.search}
           type="text"
           placeholder="Search by name..."
           value={searchTerm}
@@ -97,10 +104,12 @@ function Contacts() {
           />
         ))}
 
-        <button onClick={addHandler}>{editingContact ? "Update Contact" : "Add Contact"}</button>
+        <button onClick={addHandler}>
+          {editingContact ? "Update Contact" : "Add Contact"}
+        </button>
       </div>
 
-      <div>{alert && <p>{alert}</p>}</div>
+      <div className={styles.alert}>{alert && <p>{alert}</p>}</div>
 
       <ContactsList
         contacts={contacts}

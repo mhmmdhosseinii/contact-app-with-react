@@ -1,0 +1,36 @@
+.container {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #fff;
+  justify-content: space-between;
+  border: 2px solid #304ffe;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.container h2 {
+  color: #304ffe;
+  font-size: 1.1rem;
+}
+
+.container p {
+  color: #000000;
+}
+
+.container button {
+  margin: 0 20px;
+  height: 25px;
+  width: 70px;
+  border-radius: 10px;
+  background-color: #304ffe;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+}
+
+.container button:hover {
+  box-shadow: #304ffe 0px 0px 15px 0px;
+}
